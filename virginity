@@ -1,0 +1,14 @@
+#!bin/bash
+#install all the necessary apps from repos
+#create projects folder and pull down projects
+
+sudo dnf update
+sudo dnf install neovim ripgrep curl git vlc restic
+
+mkdir projects
+cd projects
+
+#clone dotfiles repos
+git clone git@github.com:pdawg42069/dotfiles.git
+
+#use stow to symlink dotfiles
