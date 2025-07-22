@@ -1,9 +1,11 @@
 #!bin/bash
 ##install all the necessary apps from repos
-sudo apt update && sudo apt upgrade
-sudo apt install -y neovim ripgrep curl git vlc restic chromium
+sudo dnf update
+sudo dnf install -y neovim ripgrep curl git vlc restic chromium
 
 #clone dotfiles repos
+git config --global user.name 'pdawg'
+git config --global user.email 'pdawg@nomail.com'
 git clone git@github.com:pdawg42069/dotfiles.git
 
 #use stow to symlink dotfiles
@@ -11,6 +13,7 @@ cd $HOME/dotfiles
 stow alacritty
 stow neovim
 stow bash_aliase
+source .bashrc
 
 mkdir $HOME/projects
 cd $HOME/projects
