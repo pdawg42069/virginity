@@ -31,4 +31,4 @@ chmod +x nvim-linux-x86_64.appimage
 mkdir -p /opt/nvim
 mv nvim-linux-x86_64.appimage /opt/nvim/nvim
 echo 'export PATH="$PATH:/opt/nvim/"' >>$HOME/.bashrc
-source .bashrc
+source $HOME/.bashrc
