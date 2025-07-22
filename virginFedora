@@ -1,4 +1,4 @@
-#!bin/bash
+#! /usr/bin/bash
 #setup a new linux box
 ##install all the necessary apps from repos
 sudo dnf update && sudo apt upgrade
