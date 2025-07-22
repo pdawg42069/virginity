@@ -1,7 +1,8 @@
 #!bin/bash
+#setup a new linux box
 ##install all the necessary apps from repos
 sudo apt update && sudo apt upgrade
-sudo apt install -y neovim ripgrep curl git vlc restic chromium
+sudo apt install -y curl git vlc restic chromium
 
 #clone dotfiles repos
 git clone git@github.com:pdawg42069/dotfiles.git
@@ -12,5 +13,21 @@ stow alacritty
 stow neovim
 stow bash_aliase
 
+#make projects folder and clone progects
 mkdir $HOME/projects
 cd $HOME/projects
+
+git clone git@github.com:pdawg42069/virginity.git
+git clone git@github.com:pdawg42069/terraform.git
+
+cd $HOME/Downloads/
+#grab ripgrep and install install it
+curl -LO https://github.com/sharkdp/bat/releases/download/v0.25.0/bat_0.25.0_amd64.deb
+sudo dpkg -i bat_bat_0.25.0_amd64.deb
+
+#grab nvim appimage and expose it globally
+curl -LO https://github.com/neovim/neovim/releases/download/v0.11.3/nvim-linux-x86_64.appimage
+chmod +x nvim-linux-x86_64.appimage
+mkdir -p /opt/nvim
+mv nvim-linux-x86_64.appimage /opt/nvim/nvim
+echo 'export PATH="$PATH:/opt/nvim/"' >>$HOME/.bashrc
