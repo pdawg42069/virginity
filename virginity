@@ -2,7 +2,7 @@
 #setup a new linux box
 ##install all the necessary apps from repos
 sudo apt update && sudo apt upgrade -y
-sudo apt install -y curl git vlc restic chromium
+sudo apt install -y curl git vlc restic chromium stow
 
 #clone dotfiles repos
 git clone git@github.com:pdawg42069/dotfiles.git
