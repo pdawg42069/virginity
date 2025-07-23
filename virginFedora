@@ -1,7 +1,7 @@
 #! /usr/bin/bash
 #setup a new linux box
 ##install all the necessary apps from repos
-sudo dnf update && sudo apt upgrade
+sudo dnf update -y
 sudo dnf install -y curl git vlc restic chromium ripgrep neovim bat alacritty
 
 #clone dotfiles repos
