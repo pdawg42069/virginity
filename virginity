@@ -5,6 +5,7 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install -y curl git vlc restic chromium stow
 
 #clone dotfiles repos
+cd $HOME
 git clone git@github.com:pdawg42069/dotfiles.git
 
 #use stow to symlink dotfiles
