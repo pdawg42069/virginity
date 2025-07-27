@@ -40,6 +40,9 @@ sudo mv nvim-linux-x86_64.appimage /opt/nvim/nvim
 curl -LO https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/AdwaitaMono.zip
 sudo unzip -o AdwaitaMono.zip -d /usr/share/fonts/
 
+sudo echo '192.168.0.10:/mnt/tank/media /media/AV nfs defaults 0 0' >>/etc/fstab
+sudo echo '192.168.0.10:/mnt/tank/nfs /media/nfs nfs defaults 0 0' >>/etc/fstab
+
 echo 'export PATH="$PATH:/opt/nvim/"' >>$HOME/.bashrc
 sleep 1
 source $HOME/.bashrc
