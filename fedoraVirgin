@@ -53,4 +53,5 @@ echo 'if [ -f ~/.bash_aliases ]; then
 . ~/.bash_aliases 
 fi' >>$HOME/.bashrc
 alacritty migrate
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 systemctl reboot
