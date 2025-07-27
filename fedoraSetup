@@ -1,5 +1,6 @@
 #! /usr/bin/bash
-#setup a new linux box
+#Fuck you DAN!
+##setup a new linux box
 ##install all the necessary apps from repos
 echo 'Defaults       timestamp_timeout=120' | sudo EDITOR='tee -a' visudo
 
