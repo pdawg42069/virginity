@@ -53,5 +53,5 @@ source $HOME/.bashrc
 echo 'if [ -f ~/.bash_aliases ]; then
 . ~/.bash_aliases 
 fi' >>$HOME/.bashrc
-
+alacritty migrate
 systemctl reboot
