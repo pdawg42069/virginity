@@ -43,3 +43,4 @@ sudo unzip -o AdwaitaMono.zip -d /usr/share/fonts/
 echo 'export PATH="$PATH:/opt/nvim/"' >>$HOME/.bashrc
 sleep 1
 source $HOME/.bashrc
+systemctl reboot
