@@ -37,7 +37,7 @@ sudo mkdir -p /opt/nvim
 sudo mv nvim-linux-x86_64.appimage /opt/nvim/nvim
 
 #grab nerd fonts for lazyVim
-curl -LO https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/AdwaitaMono.zip
+curl -LO https://github.com/pdawg42069/virginity/blob/main/AdwaitaMono.zip
 sudo unzip -o AdwaitaMono.zip -d /usr/share/fonts/
 
 echo 'export PATH="$PATH:/opt/nvim/"' >>$HOME/.bashrc
