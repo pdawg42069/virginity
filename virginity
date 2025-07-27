@@ -35,5 +35,6 @@ curl -LO https://github.com/neovim/neovim/releases/download/v0.11.3/nvim-linux-x
 chmod +x nvim-linux-x86_64.appimage
 sudo mkdir -p /opt/nvim
 sudo mv nvim-linux-x86_64.appimage /opt/nvim/nvim
+
 echo 'export PATH="$PATH:/opt/nvim/"' >>$HOME/.bashrc
 source $HOME/.bashrc
