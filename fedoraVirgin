@@ -53,6 +53,6 @@ sleep 1
 source $HOME/.bashrc
 echo 'if [ -f ~/.bash_aliases ]; then
 . ~/.bash_aliases 
-fi' >>.bashrc
+fi' >>$HOME/.bashrc
 
 systemctl reboot
