@@ -47,4 +47,8 @@ echo '192.168.0.10:/mnt/tank/nfs /media/nfs nfs defaults 0 0' | tee -a /etc/fsta
 echo 'export PATH="$PATH:/opt/nvim/"' >>$HOME/.bashrc
 sleep 1
 source $HOME/.bashrc
+echo 'if [ -f ~/.bash_aliases ]; then
+. ~/.bash_aliases 
+fi' >>.bashrc
+
 systemctl reboot
