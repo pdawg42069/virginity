@@ -14,7 +14,6 @@ sudo dnf install -y --skip-unavailable curl git vlc restic chromium stow gcc unz
 cd $HOME
 git clone git@github.com:pdawg42069/dotfiles.git
 
-sudo whoami
 #use stow to symlink dotfiles
 cd $HOME/dotfiles
 stow alacritty
@@ -49,7 +48,6 @@ echo '192.168.0.10:/mnt/tank/media /media/AV nfs defaults 0 0' | sudo tee -a /et
 echo '192.168.0.10:/mnt/tank/nfs /media/nfs nfs defaults 0 0' | sudo tee -a /etc/fstab
 
 echo 'export PATH="$PATH:/opt/nvim/"' >>$HOME/.bashrc
-sleep 1
 source $HOME/.bashrc
 echo 'if [ -f ~/.bash_aliases ]; then
 . ~/.bash_aliases 
