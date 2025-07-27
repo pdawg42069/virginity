@@ -1,0 +1,50 @@
+#! /usr/bin/bash
+#setup a new linux box
+##install all the necessary apps from repos
+echo 'github.com ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOMqqnkVzrm0SdG6UOoqKLsabgH5C9okWi0dh2l9GKJl
+github.com ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEmKSENjQEezOmxkZMy7opKgwFB9nkt5YRrYMjNuG5N87uRgg6CLrbo5wAdT/y6v0mKV0U2w0WZ2YB/++Tpockg=
+github.com ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCj7ndNxQowgcQnjshcLrqPEiiphnt+VTTvDP6mHBL9j1aNUkY4Ue1gvwnGLVlOhGeYrnZaMgRK6+PKCUXaDbC7qtbW8gIkhL7aGCsOr/C56SJMy/BCZfxd1nWzAOxSDPgVsmerOBYfNqltV9/hWCqBywINIR+5dIg6JTJ72pcEpEjcYgXkE2YEFXV1JHnsKgbLWNlhScqb2UmyRkQyytRLtL+38TGxkxCflmO+5Z8CSSNY7GidjMIZ7Q4zMjA2n1nGrlTDkzwDCsw+wqFPGQA179cnfGWOWRVruj16z6XyvxvjJwbz0wQZ75XK5tKSb7FNyeIEs4TT4jk+S4dhPeAUC5y+bDYirYgM4GC7uEnztnZyaVWQ7B381AK4Qdrwt51ZqExKbQpTUNn+EjqoTwvqNj4kqx5QUCI0ThS/YkOxJCXmPUWZbhjpCg56i+2aB6CmK2JGhn57K5mj0MNdBXA4/WnwH6XoPWJzK5Nyu2zB3nAZp+S5hpQs+p1vN1/wsjk=' >>$HOME/.ssh/known_hosts
+
+sudo dnf update && sudo apt upgrade -y
+sudo dnf install -y curl git vlc restic chromium stow gcc unzip nfs-common
+
+#clone dotfiles repos
+cd $HOME
+git clone git@github.com:pdawg42069/dotfiles.git
+
+#use stow to symlink dotfiles
+cd $HOME/dotfiles
+stow alacritty
+stow nvim
+stow bash_aliases
+
+#make projects folder and clone progects
+mkdir $HOME/projects
+cd $HOME/projects
+
+git clone git@github.com:pdawg42069/virginity.git
+git clone git@github.com:pdawg42069/terraform.git
+
+cd $HOME/Downloads/
+##grab batcat and install install it
+#curl -LO https://github.com/sharkdp/bat/releases/download/v0.25.0/bat_0.25.0_amd64.deb
+#sudo dpkg -i bat_0.25.0_amd64.deb
+#
+##grab nvim appimage and expose it globally
+#curl -LO https://github.com/neovim/neovim/releases/download/v0.11.3/nvim-linux-x86_64.appimage
+#chmod +x nvim-linux-x86_64.appimage
+#sudo mkdir -p /opt/nvim
+#sudo mv nvim-linux-x86_64.appimage /opt/nvim/nvim
+#
+
+#grab nerd fonts for lazyVim
+curl -LO https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/AdwaitaMono.zip
+sudo unzip -o AdwaitaMono.zip -d /usr/share/fonts/
+
+sudo echo '192.168.0.10:/mnt/tank/media /media/AV nfs defaults 0 0' >>/etc/fstab
+sudo echo '192.168.0.10:/mnt/tank/nfs /media/nfs nfs defaults 0 0' >>/etc/fstab
+
+echo 'export PATH="$PATH:/opt/nvim/"' >>$HOME/.bashrc
+sleep 1
+source $HOME/.bashrc
+systemctl reboot
