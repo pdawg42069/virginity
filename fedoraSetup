@@ -53,6 +53,8 @@ echo 'if [ -f ~/.bash_aliases ]; then
 . ~/.bash_aliases 
 fi' >>$HOME/.bashrc
 alacritty migrate
+git config --global user.name 'pdawg'
+git config --global user.email 'pdawg@nomail.com'
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 gsettings set org.gnome.desktop.session idle-delay 1800
 systemctl reboot

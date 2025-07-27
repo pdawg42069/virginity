@@ -48,6 +48,8 @@ echo '192.168.0.10:/mnt/tank/media /media/AV nfs defaults 0 0' | sudo tee -a /et
 echo '192.168.0.10:/mnt/tank/nfs /media/nfs nfs defaults 0 0' | sudo tee -a /etc/ fstab
 
 echo 'export PATH="$PATH:/opt/nvim/"' >>$HOME/.bashrc
+git config --global user.email 'pdawg@nomail.com'
+git config --global user.name 'pdawg'
 alacritty migrate
 source $HOME/.bashrc
 systemctl reboot
